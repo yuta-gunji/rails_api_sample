@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  db:
+    build:
+      context: ./docker/db
+      dockerfile: Dockerfile
+    volumes:
+      - rails_api_sample_db:/var/lib/postgresql/data:delegated
+    ports:
+      - '5432:5432'
+
+volumes:
+  rails_api_sample_db:
